@@ -1,0 +1,6 @@
+#ifndef PROJETO_MAROMO_LIBRARY_H
+#define PROJETO_MAROMO_LIBRARY_H
+
+void hello(void);
+
+#endif //PROJETO_MAROMO_LIBRARY_H

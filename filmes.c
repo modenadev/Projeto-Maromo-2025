@@ -81,3 +81,20 @@ void adicionarFilme() {
     salvarDados();
     printf("Filme adicionado com sucesso!\n");
 }
+
+void buscarPorDiretor() {
+    char nome[MAX_STR];
+    printf("Nome do diretor: ");
+    getchar();
+    fgets(nome, MAX_STR, stdin);
+    nome[strcspn(nome, "\n")] = '\0';
+
+    for (int i = 0; i < numFilmes; i++) {
+        if (strcmp(filmes[i]->diretor, nome) == 0) {
+            printf("-> [%d] %s (%d) - %s, Nota: %.1f\n",
+                   filmes[i]->id, filmes[i]->titulo,
+                   filmes[i]->ano, filmes[i]->genero,
+                   filmes[i]->avaliacao);
+        }
+    }
+}

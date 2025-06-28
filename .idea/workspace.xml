@@ -44,8 +44,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1751127310" />
+                    <option name="branchName" value="buscar-por-diretor" />
+                    <option name="lastUsedInstant" value="1751127645" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="adicionar-filme" />
+                    <option name="lastUsedInstant" value="1751127524" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="salvar-csv" />
+                    <option name="lastUsedInstant" value="1751127374" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="inicializacao" />
@@ -90,7 +98,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "buscar-por-diretor",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -117,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749860112135</updated>
       <workItem from="1749860114022" duration="8000" />
-      <workItem from="1751126458149" duration="893000" />
+      <workItem from="1751126458149" duration="1196000" />
     </task>
     <servers />
   </component>

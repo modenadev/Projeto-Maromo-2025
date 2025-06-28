@@ -152,4 +152,23 @@ void atualizarAvaliacao() {
     printf("Filme com ID %d não encontrado.\n", id);
 }
 
+int comparar(const void* a, const void* b) {
+    Filme* f1 = *(Filme**)a;
+    Filme* f2 = *(Filme**)b;
+
+    if (f1->ano != f2->ano)
+        return f1->ano - f2->ano;
+    return strcmp(f1->titulo, f2->titulo);
+}
+
+void listarFilmes() {
+    qsort(filmes, numFilmes, sizeof(Filme*), comparar);
+    for (int i = 0; i < numFilmes; i++) {
+        printf("[%d] %s (%d) - Dir: %s | %s | Nota: %.1f\n",
+               filmes[i]->id, filmes[i]->titulo,
+               filmes[i]->ano, filmes[i]->diretor,
+               filmes[i]->genero, filmes[i]->avaliacao);
+    }
+}
+
 

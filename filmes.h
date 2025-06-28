@@ -18,5 +18,10 @@ extern int numFilmes;
 
 void inicializa();
 void salvarDados();
+void adicionarFilme();
+void buscarPorDiretor();
+void filtrarPorGenero();
+void atualizarAvaliacao();
+void listarFilmes();
 
 #endif

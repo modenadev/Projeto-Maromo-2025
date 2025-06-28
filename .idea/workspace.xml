@@ -19,9 +19,7 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated>
-      <config projectName="Projeto_Maromo" targetName="Projeto_Maromo" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -51,6 +49,10 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1751129303" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="dev" />
                     <option name="lastUsedInstant" value="1751128208" />
                   </RecentBranch>
@@ -65,10 +67,6 @@
                   <RecentBranch>
                     <option name="branchName" value="atualizar-avaliacao" />
                     <option name="lastUsedInstant" value="1751127952" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="filtrar-por-genero" />
-                    <option name="lastUsedInstant" value="1751127756" />
                   </RecentBranch>
                 </list>
               </option>
@@ -110,7 +108,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -150,7 +148,7 @@
       <updated>1749860112135</updated>
       <workItem from="1749860114022" duration="8000" />
       <workItem from="1751126458149" duration="1502000" />
-      <workItem from="1751128285540" duration="818000" />
+      <workItem from="1751128285540" duration="8000" />
     </task>
     <servers />
   </component>

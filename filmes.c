@@ -7,28 +7,38 @@ Filme* filmes[MAX_FILMES];
 int numFilmes = 0;
 
 void inicializa() {
-    FILE* arquivo = fopen("filmes.csv", "r");
+    FILE* arquivo = fopen("../filmes.csv", "r");
     if (!arquivo) {
-        printf("Arquivo 'filmes.csv' não encontrado. Iniciando vazio.\n");
+        perror("Erro ao abrir o arquivo");
         return;
     }
 
     char linha[512];
     fgets(linha, sizeof(linha), arquivo); // cabeçalho
+
     while (fgets(linha, sizeof(linha), arquivo)) {
         Filme* f = (Filme*)malloc(sizeof(Filme));
-        sscanf(linha, "%d,%[^,],%[^,],%d,%[^,],%f",
-               &f->id,
-               f->titulo,
-               f->diretor,
-               &f->ano,
-               f->genero,
-               &f->avaliacao);
-        filmes[numFilmes++] = f;
+        int lidos = sscanf(linha, "%d,%[^,],%[^,],%d,%[^,],%f",
+                           &f->id,
+                           f->titulo,
+                           f->diretor,
+                           &f->ano,
+                           f->genero,
+                           &f->avaliacao);
+
+        if (lidos == 6) {
+            filmes[numFilmes++] = f;
+            printf("Filme carregado: %s (%d) - %s - Nota %.1f\n",
+                   f->titulo, f->ano, f->genero, f->avaliacao);
+        } else {
+            printf("⚠️ Erro ao ler linha: %s", linha);
+            free(f);
+        }
     }
 
     fclose(arquivo);
 }
+
 void salvarDados() {
     FILE* arquivo = fopen("filmes.csv", "w");
     if (!arquivo) {

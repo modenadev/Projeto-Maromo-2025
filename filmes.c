@@ -49,3 +49,35 @@ void salvarDados() {
 
     fclose(arquivo);
 }
+
+void adicionarFilme() {
+    Filme* f = (Filme*)malloc(sizeof(Filme));
+
+    printf("ID do filme: ");
+    scanf("%d", &f->id);
+    getchar();
+
+    printf("Título: ");
+    fgets(f->titulo, MAX_STR, stdin);
+    f->titulo[strcspn(f->titulo, "\n")] = '\0';
+
+    printf("Diretor: ");
+    fgets(f->diretor, MAX_STR, stdin);
+    f->diretor[strcspn(f->diretor, "\n")] = '\0';
+
+    printf("Ano: ");
+    scanf("%d", &f->ano);
+    getchar();
+
+    printf("Gênero: ");
+    fgets(f->genero, MAX_STR, stdin);
+    f->genero[strcspn(f->genero, "\n")] = '\0';
+
+    printf("Avaliação (0-10): ");
+    scanf("%f", &f->avaliacao);
+    getchar();
+
+    filmes[numFilmes++] = f;
+    salvarDados();
+    printf("Filme adicionado com sucesso!\n");
+}

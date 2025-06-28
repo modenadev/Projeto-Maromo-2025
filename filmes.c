@@ -40,7 +40,7 @@ void inicializa() {
 }
 
 void salvarDados() {
-    FILE* arquivo = fopen("filmes.csv", "w");
+    FILE* arquivo = fopen("../filmes.csv", "w");
     if (!arquivo) {
         printf("Erro ao salvar arquivo!\n");
         return;

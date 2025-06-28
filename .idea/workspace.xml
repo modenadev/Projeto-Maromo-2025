@@ -23,7 +23,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c9ccb6d-3ae7-468c-9903-a44014c82a15" name="Changes" comment="" />
+    <list default="true" id="0c9ccb6d-3ae7-468c-9903-a44014c82a15" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/filmes.c" beforeDir="false" afterPath="$PROJECT_DIR$/filmes.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +46,14 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="atualizar-avaliacao" />
+                    <option name="lastUsedInstant" value="1751127952" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="filtrar-por-genero" />
+                    <option name="lastUsedInstant" value="1751127756" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="buscar-por-diretor" />
                     <option name="lastUsedInstant" value="1751127645" />
                   </RecentBranch>
@@ -54,10 +64,6 @@
                   <RecentBranch>
                     <option name="branchName" value="salvar-csv" />
                     <option name="lastUsedInstant" value="1751127374" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="inicializacao" />
-                    <option name="lastUsedInstant" value="1751126699" />
                   </RecentBranch>
                 </list>
               </option>
@@ -98,7 +104,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "buscar-por-diretor",
+    "git-widget-placeholder": "atualizar-avaliacao",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -125,7 +131,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749860112135</updated>
       <workItem from="1749860114022" duration="8000" />
-      <workItem from="1751126458149" duration="1196000" />
+      <workItem from="1751126458149" duration="1502000" />
     </task>
     <servers />
   </component>

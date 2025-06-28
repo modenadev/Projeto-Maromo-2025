@@ -133,3 +133,23 @@ void filtrarPorGenero() {
     }
 }
 
+void atualizarAvaliacao() {
+    int id;
+    printf("ID do filme para atualizar nota: ");
+    scanf("%d", &id);
+
+    for (int i = 0; i < numFilmes; i++) {
+        if (filmes[i]->id == id) {
+            printf("Nota atual: %.1f\n", filmes[i]->avaliacao);
+            printf("Nova avaliação (0-10): ");
+            scanf("%f", &filmes[i]->avaliacao);
+            salvarDados();
+            printf("Avaliação atualizada com sucesso.\n");
+            return;
+        }
+    }
+
+    printf("Filme com ID %d não encontrado.\n", id);
+}
+
+

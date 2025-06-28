@@ -44,12 +44,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="inicializacao" />
-                    <option name="lastUsedInstant" value="1751126699" />
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1751127310" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1751126698" />
+                    <option name="branchName" value="inicializacao" />
+                    <option name="lastUsedInstant" value="1751126699" />
                   </RecentBranch>
                 </list>
               </option>
@@ -90,7 +90,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "inicializacao",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -117,7 +117,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749860112135</updated>
       <workItem from="1749860114022" duration="8000" />
-      <workItem from="1751126458149" duration="548000" />
+      <workItem from="1751126458149" duration="893000" />
     </task>
     <servers />
   </component>

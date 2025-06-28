@@ -29,3 +29,23 @@ void inicializa() {
 
     fclose(arquivo);
 }
+void salvarDados() {
+    FILE* arquivo = fopen("filmes.csv", "w");
+    if (!arquivo) {
+        printf("Erro ao salvar arquivo!\n");
+        return;
+    }
+
+    fprintf(arquivo, "ID,Titulo,Diretor,Ano,Genero,Avaliacao\n");
+    for (int i = 0; i < numFilmes; i++) {
+        fprintf(arquivo, "%d,%s,%s,%d,%s,%.1f\n",
+                filmes[i]->id,
+                filmes[i]->titulo,
+                filmes[i]->diretor,
+                filmes[i]->ano,
+                filmes[i]->genero,
+                filmes[i]->avaliacao);
+    }
+
+    fclose(arquivo);
+}

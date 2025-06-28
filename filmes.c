@@ -116,22 +116,6 @@ void filtrarPorGenero() {
     }
 }
 
-void filtrarPorGenero() {
-    char genero[MAX_STR];
-    printf("Gênero: ");
-    getchar();
-    fgets(genero, MAX_STR, stdin);
-    genero[strcspn(genero, "\n")] = '\0';
-
-    for (int i = 0; i < numFilmes; i++) {
-        if (strcmp(filmes[i]->genero, genero) == 0) {
-            printf("-> [%d] %s (%d) - Dir: %s, Nota: %.1f\n",
-                   filmes[i]->id, filmes[i]->titulo,
-                   filmes[i]->ano, filmes[i]->diretor,
-                   filmes[i]->avaliacao);
-        }
-    }
-}
 
 void atualizarAvaliacao() {
     int id;

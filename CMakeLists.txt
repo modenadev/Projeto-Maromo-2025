@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.29)
-project(Projeto_Maromo C)
+cmake_minimum_required(VERSION 3.10)
+project(CatalogoFilmes C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(Projeto_Maromo STATIC library.c)
+# Adiciona todos os arquivos .c do projeto
+add_executable(Projeto_Maromo main.c filmes.c)
+

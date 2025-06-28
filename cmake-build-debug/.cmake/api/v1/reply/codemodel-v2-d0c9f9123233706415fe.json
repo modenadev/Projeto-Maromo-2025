@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.29"
+						"string" : "3.10"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "Projeto_Maromo",
+					"name" : "CatalogoFilmes",
 					"targetIndexes" : 
 					[
 						0
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Projeto_Maromo::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Projeto_Maromo-Debug-be390f9edde39c5af663.json",
+					"jsonFile" : "target-Projeto_Maromo-Debug-7121206a60538b192127.json",
 					"name" : "Projeto_Maromo",
 					"projectIndex" : 0
 				}

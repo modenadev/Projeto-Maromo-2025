@@ -1,0 +1,8 @@
+# ninja log v6
+206	632	7728320851043556	Projeto_Maromo.exe	ca5d1f16acdd832f
+3	355	7728322259609687	build.ninja	d2fbbf316dad170d
+7	206	7728321800169629	CMakeFiles/Projeto_Maromo.dir/main.c.obj	eace9f1548641146
+11	204	7728320849107291	CMakeFiles/Projeto_Maromo.dir/filmes.c.obj	7c0f5ca8fd0a55bd
+3	363	7728322259609687	build.ninja	d2fbbf316dad170d
+30	146	7728322260616865	CMakeFiles/Projeto_Maromo.dir/main.c.obj	eace9f1548641146
+147	319	7728322261775702	Projeto_Maromo.exe	ca5d1f16acdd832f

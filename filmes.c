@@ -3,6 +3,8 @@
 #include <string.h>
 #include "filmes.h"
 
+#include <ctype.h>
+
 Filme* filmes[MAX_FILMES];
 int numFilmes = 0;
 
@@ -59,37 +61,113 @@ void salvarDados() {
 
     fclose(arquivo);
 }
+// Função para limpar o buffer de entrada, essencial após leituras.
+void limparBuffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+// Função para ler uma string de forma segura
+void lerString(const char* prompt, char* destino, int tamanho) {
+    printf("%s", prompt);
+    fgets(destino, tamanho, stdin);
+    destino[strcspn(destino, "\n")] = '\0'; // Remove o \n do final
+}
+
+int lerInteiro(const char* prompt) {
+    char buffer[100];
+    int valor;
+    char char_extra;
+
+    while (1) {
+        printf("%s", prompt);
+        fgets(buffer, sizeof(buffer), stdin);
+
+        int itens_lidos = sscanf(buffer, "%d%c", &valor, &char_extra);
+
+        if (itens_lidos == 2 && char_extra == '\n') {
+            return valor;
+        }
+        else if (itens_lidos == 1) {
+
+            int apenas_digitos = 1;
+            buffer[strcspn(buffer, "\n")] = 0;
+            for(int i=0; buffer[i] != '\0'; i++){
+                if(!isdigit(buffer[i]) && (i > 0 || buffer[i] != '-')) {
+                    apenas_digitos = 0;
+                    break;
+                }
+            }
+            if(apenas_digitos) return valor;
+        }
+
+        printf("    ⚠️ Erro: Entrada inválida. Por favor, digite apenas o número.\n");
+    }
+}
+
+// Função para verificar se um ID de filme já existe
+int idExiste(int id) {
+    for (int i = 0; i < numFilmes; i++) {
+        if (filmes[i]->id == id) {
+            return 1; // Verdadeiro, ID já existe
+        }
+    }
+    return 0; // Falso, ID está disponível
+}
+
 
 void adicionarFilme() {
+    if (numFilmes >= MAX_FILMES) {
+        printf("Catálogo de filmes está cheio!\n");
+        return;
+    }
+
     Filme* f = (Filme*)malloc(sizeof(Filme));
+    if (!f) {
+        printf("Erro de alocação de memória!\n");
+        return;
+    }
 
-    printf("ID do filme: ");
-    scanf("%d", &f->id);
-    getchar();
+    // --- Validação do ID ---
+    do {
+        f->id = lerInteiro("ID do filme: ");
+        if (idExiste(f->id)) {
+            printf("⚠️ Erro: Este ID já está em uso. Tente outro.\n");
+        }
+    } while (idExiste(f->id));
 
-    printf("Título: ");
-    fgets(f->titulo, MAX_STR, stdin);
-    f->titulo[strcspn(f->titulo, "\n")] = '\0';
 
-    printf("Diretor: ");
-    fgets(f->diretor, MAX_STR, stdin);
-    f->diretor[strcspn(f->diretor, "\n")] = '\0';
+    // --- Leitura das Strings ---
+    lerString("Título: ", f->titulo, MAX_STR);
+    lerString("Diretor: ", f->diretor, MAX_STR);
 
-    printf("Ano: ");
-    scanf("%d", &f->ano);
-    getchar();
 
-    printf("Gênero: ");
-    fgets(f->genero, MAX_STR, stdin);
-    f->genero[strcspn(f->genero, "\n")] = '\0';
+    // --- Validação do Ano ---
+    do {
+        f->ano = lerInteiro("Ano de lançamento: ");
+        if (f->ano < 1888 || f->ano > 2025) { // 1888 é o ano do primeiro filme
+            printf("⚠️ Erro: Ano parece inválido. Tente novamente.\n");
+        }
+    } while (f->ano < 1888 || f->ano > 2025);
 
-    printf("Avaliação (0-10): ");
-    scanf("%f", &f->avaliacao);
-    getchar();
 
+    // --- Validação da Avaliação ---
+    float avaliacao;
+    do {
+        printf("Avaliação (0.0 a 10.0): ");
+        scanf("%f", &avaliacao);
+        limparBuffer(); // Limpa o buffer após o scanf de float
+        if (avaliacao < 0.0 || avaliacao > 10.0) {
+            printf("⚠️ Erro: A avaliação deve ser entre 0 e 10.\n");
+        }
+    } while (avaliacao < 0.0 || avaliacao > 10.0);
+    f->avaliacao = avaliacao;
+
+
+    // --- Adicionar e Salvar ---
     filmes[numFilmes++] = f;
     salvarDados();
-    printf("Filme adicionado com sucesso!\n");
+    printf("\n✅ Filme '%s' adicionado com sucesso!\n", f->titulo);
 }
 
 void buscarPorDiretor() {
@@ -108,6 +186,9 @@ void buscarPorDiretor() {
         }
     }
 }
+
+
+
 
 void filtrarPorGenero() {
     char genero[MAX_STR];

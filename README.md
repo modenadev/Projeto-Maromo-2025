@@ -70,6 +70,7 @@ Listagem dos filmes cadastrados
 Salvamento em arquivo CSV
 
 📌 Requisitos
+
 Compilador C (GCC ou equivalente)
 
 CLion instalado (recomendado)

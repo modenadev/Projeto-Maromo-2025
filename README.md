@@ -1,5 +1,6 @@
 🎬 Projeto Maromo 2025
-##Sistema simples desenvolvido em C para gerenciamento de um catálogo de filmes, incluindo funcionalidades de cadastro, listagem e armazenamento em arquivo CSV.
+
+Sistema simples desenvolvido em C para gerenciamento de um catálogo de filmes, incluindo funcionalidades de cadastro, listagem e armazenamento em arquivo CSV.
 
 🛠️ Ambiente de Desenvolvimento
 Desenvolvido na IDE CLion (JetBrains).

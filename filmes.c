@@ -30,8 +30,8 @@ void inicializa() {
 
         if (lidos == 6) {
             filmes[numFilmes++] = f;
-            printf("Filme carregado: %s (%d) - %s - Nota %.1f\n",
-                   f->titulo, f->ano, f->genero, f->avaliacao);
+            printf("Filme carregado: [%d] %s (%d) - Dir: %s, Gênero: %s, Nota: %.1f\n",
+                    f->id, f->titulo, f->ano, f->diretor, f->genero, f->avaliacao);
         } else {
             printf("⚠️ Erro ao ler linha: %s", linha);
             free(f);
@@ -101,7 +101,7 @@ int lerInteiro(const char* prompt) {
             if(apenas_digitos) return valor;
         }
 
-        printf("    ⚠️ Erro: Entrada inválida. Por favor, digite apenas o número.\n");
+        printf("⚠️ Erro: Entrada inválida. Por favor, digite apenas o número.\n");
     }
 }
 
@@ -140,12 +140,13 @@ void adicionarFilme() {
 
     lerString("Título: ", f->titulo, MAX_STR);
     lerString("Diretor: ", f->diretor, MAX_STR);
+    lerString("Genero: ", f->genero, MAX_STR);
 
 
 
     do {
         f->ano = lerInteiro("Ano de lançamento: ");
-        if (f->ano < 1888 || f->ano > 2025) { // 1888 é o ano do primeiro filme
+        if (f->ano < 1888 || f->ano > 2025) {
             printf("⚠️ Erro: Ano parece inválido. Tente novamente.\n");
         }
     } while (f->ano < 1888 || f->ano > 2025);
@@ -156,7 +157,7 @@ void adicionarFilme() {
     do {
         printf("Avaliação (0.0 a 10.0): ");
         scanf("%f", &avaliacao);
-        limparBuffer(); // Limpa o buffer após o scanf de float
+        limparBuffer();
         if (avaliacao < 0.0 || avaliacao > 10.0) {
             printf("⚠️ Erro: A avaliação deve ser entre 0 e 10.\n");
         }
@@ -173,17 +174,25 @@ void adicionarFilme() {
 void buscarPorDiretor() {
     char nome[MAX_STR];
     printf("Nome do diretor: ");
-    getchar();
     fgets(nome, MAX_STR, stdin);
     nome[strcspn(nome, "\n")] = '\0';
 
+    int encontrou = 0;
+
+    printf("\nBuscando por filmes do diretor '%s'...\n", nome);
     for (int i = 0; i < numFilmes; i++) {
-        if (strcmp(filmes[i]->diretor, nome) == 0) {
-            printf("-> [%d] %s (%d) - %s, Nota: %.1f\n",
+
+        if (strcasecmp(filmes[i]->diretor, nome) == 0) {
+            printf("-> [%d] %s (%d) - Gênero: %s, Nota: %.1f\n",
                    filmes[i]->id, filmes[i]->titulo,
                    filmes[i]->ano, filmes[i]->genero,
                    filmes[i]->avaliacao);
+
+            encontrou = 1;
         }
+    }
+    if (encontrou == 0) {
+        printf("Nenhum filme encontrado para o diretor '%s'.\n", nome);
     }
 }
 
@@ -244,7 +253,7 @@ int comparar(const void* a, const void* b) {
 void listarFilmes() {
     qsort(filmes, numFilmes, sizeof(Filme*), comparar);
     for (int i = 0; i < numFilmes; i++) {
-        printf("[%d] %s (%d) - Dir: %s | %s | Nota: %.1f\n",
+        printf(" [%d] Nome: %s - Ano: (%d) - Dir: %s | Genero: %s | Nota: %.1f\n",
                filmes[i]->id, filmes[i]->titulo,
                filmes[i]->ano, filmes[i]->diretor,
                filmes[i]->genero, filmes[i]->avaliacao);

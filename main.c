@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "filmes.h"
+
 void menu() {
+
     int opcao;
     do {
         printf("\n--- Catalogo de Filmes ---\n");

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "filmes.h" // Certifique-se de que filmes.h inclui o protótipo de buscarPorNome()
+#include "filmes.h"
 
 
 void menu() {
@@ -11,10 +11,14 @@ void menu() {
         printf("3. Filtrar por genero\n");
         printf("4. Atualizar avaliacao\n");
         printf("5. Listar filmes\n");
-        printf("6. Buscar por nome do filme\n"); // <-- Adicionei esta linha!
+        printf("6. Buscar por nome do filme\n");
         printf("0. Sair\n");
-        printf("Escolha: ");
-        scanf("%d", &opcao);
+        // Substitua a linha abaixo:
+        // printf("Escolha: ");
+        // scanf("%d", &opcao);
+
+        // Por esta linha (usando sua função lerInteiro):
+        opcao = lerInteiro("Escolha: "); // <-- ESSA É A MUDANÇA!
 
         switch (opcao) {
             case 1: adicionarFilme(); break;
@@ -22,7 +26,7 @@ void menu() {
             case 3: filtrarPorGenero(); break;
             case 4: atualizarAvaliacao(); break;
             case 5: listarFilmes(); break;
-            case 6: buscarPorNome(); break; // <-- Corrigi para buscarPorNome()!
+            case 6: buscarPorNome(); break;
             case 0: printf("Saindo...\n"); break;
             default: printf("Opção inválida.\n");
         }

@@ -23,5 +23,6 @@ void buscarPorDiretor();
 void filtrarPorGenero();
 void atualizarAvaliacao();
 void listarFilmes();
+void buscarPorNome();
 
 #endif

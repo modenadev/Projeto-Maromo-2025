@@ -48,7 +48,7 @@ void salvarDados() {
         return;
     }
 
-    fprintf(arquivo, "ID,Titulo,Diretor,Ano,Genero,Avaliacao\n");
+    fprintf(arquivo, "ID,Titulo,Diretor,Ano,Genero,Avaliação\n");
     for (int i = 0; i < numFilmes; i++) {
         fprintf(arquivo, "%d,%s,%s,%d,%s,%.1f\n",
                 filmes[i]->id,
@@ -243,6 +243,29 @@ void listarFilmes() {
                filmes[i]->id, filmes[i]->titulo,
                filmes[i]->ano, filmes[i]->diretor,
                filmes[i]->genero, filmes[i]->avaliacao);
+    }
+
+}
+
+void buscarPorNome() {
+    char tituloBusca[MAX_STR];
+    printf("Título do filme para buscar: ");
+    limparBuffer();
+    lerString("", tituloBusca, MAX_STR);
+
+    int encontrado = 0;
+    for (int i = 0; i < numFilmes; i++) {
+        if (strstr(filmes[i]->titulo, tituloBusca) != NULL) {
+            printf("-> [%d] %s (%d) - Dir: %s, Gênero: %s, Nota: %.1f\n",
+                   filmes[i]->id, filmes[i]->titulo,
+                   filmes[i]->ano, filmes[i]->diretor,
+                   filmes[i]->genero, filmes[i]->avaliacao);
+            encontrado = 1;
+        }
+    }
+
+    if (!encontrado) {
+        printf("Nenhum filme encontrado com o titulo '%s'.\n", tituloBusca);
     }
 }
 

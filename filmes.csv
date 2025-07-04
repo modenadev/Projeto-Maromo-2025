@@ -1,4 +1,4 @@
-ID,Titulo,Diretor,Ano,Genero,Avaliacao
+ID,Titulo,Diretor,Ano,Genero,Avaliação
 1,O Poderoso Chefão,Francis Ford Coppola,1972,Crime,9.2
 2,Clube da Luta,David Fincher,1999,Drama,10.0
 3,Interestelar,Christopher Nolan,2014,Ficção,9.0
@@ -7,5 +7,5 @@ ID,Titulo,Diretor,Ano,Genero,Avaliacao
 10,beber nao case, ruan,2002,terror,1.1
 1,sdad,asdas,2222,a,10.0
 50,caio gay,caio gay,200,masc,10.0
-0,asdas,asasd,2000,Joon-ho,2019.0
+0,asdas,asasd,2000,Joon-ho,0.0
 5,Matrix,Lana Wachowski,19995,�,10.0

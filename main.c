@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include "filmes.h"
-
-
 void menu() {
     int opcao;
     do {
@@ -13,11 +11,9 @@ void menu() {
         printf("5. Listar filmes\n");
         printf("6. Buscar por nome do filme\n");
         printf("0. Sair\n");
-        // Substitua a linha abaixo:
-        // printf("Escolha: ");
-        // scanf("%d", &opcao);
 
-        // Por esta linha (usando sua função lerInteiro):
+
+
         opcao = lerInteiro("Escolha: "); // <-- ESSA É A MUDANÇA!
 
         switch (opcao) {

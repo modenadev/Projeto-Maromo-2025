@@ -16,7 +16,7 @@ void inicializa() {
     }
 
     char linha[512];
-    fgets(linha, sizeof(linha), arquivo); // cabeçalho
+    fgets(linha, sizeof(linha), arquivo);
 
     while (fgets(linha, sizeof(linha), arquivo)) {
         Filme* f = (Filme*)malloc(sizeof(Filme));
@@ -61,13 +61,13 @@ void salvarDados() {
 
     fclose(arquivo);
 }
-// Função para limpar o buffer de entrada, essencial após leituras.
+
 void limparBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-// Função para ler uma string de forma segura
+
 void lerString(const char* prompt, char* destino, int tamanho) {
     printf("%s", prompt);
     fgets(destino, tamanho, stdin);
@@ -105,14 +105,14 @@ int lerInteiro(const char* prompt) {
     }
 }
 
-// Função para verificar se um ID de filme já existe
+
 int idExiste(int id) {
     for (int i = 0; i < numFilmes; i++) {
         if (filmes[i]->id == id) {
-            return 1; // Verdadeiro, ID já existe
+            return 1;
         }
     }
-    return 0; // Falso, ID está disponível
+    return 0;
 }
 
 
@@ -128,7 +128,7 @@ void adicionarFilme() {
         return;
     }
 
-    // --- Validação do ID ---
+
     do {
         f->id = lerInteiro("ID do filme: ");
         if (idExiste(f->id)) {
@@ -137,12 +137,12 @@ void adicionarFilme() {
     } while (idExiste(f->id));
 
 
-    // --- Leitura das Strings ---
+
     lerString("Título: ", f->titulo, MAX_STR);
     lerString("Diretor: ", f->diretor, MAX_STR);
 
 
-    // --- Validação do Ano ---
+
     do {
         f->ano = lerInteiro("Ano de lançamento: ");
         if (f->ano < 1888 || f->ano > 2025) { // 1888 é o ano do primeiro filme
@@ -151,7 +151,7 @@ void adicionarFilme() {
     } while (f->ano < 1888 || f->ano > 2025);
 
 
-    // --- Validação da Avaliação ---
+
     float avaliacao;
     do {
         printf("Avaliação (0.0 a 10.0): ");
@@ -250,12 +250,13 @@ void listarFilmes() {
 void buscarPorNome() {
     char tituloBusca[MAX_STR];
     printf("Título do filme para buscar: ");
-    limparBuffer();
+
     lerString("", tituloBusca, MAX_STR);
 
     int encontrado = 0;
     for (int i = 0; i < numFilmes; i++) {
-        if (strstr(filmes[i]->titulo, tituloBusca) != NULL) {
+
+        if (strcasecmp(filmes[i]->titulo, tituloBusca) == 0) {
             printf("-> [%d] %s (%d) - Dir: %s, Gênero: %s, Nota: %.1f\n",
                    filmes[i]->id, filmes[i]->titulo,
                    filmes[i]->ano, filmes[i]->diretor,
@@ -265,8 +266,9 @@ void buscarPorNome() {
     }
 
     if (!encontrado) {
-        printf("Nenhum filme encontrado com o titulo '%s'.\n", tituloBusca);
+        printf("Nenhum filme encontrado com o título '%s'.\n", tituloBusca);
     }
 }
+
 
 

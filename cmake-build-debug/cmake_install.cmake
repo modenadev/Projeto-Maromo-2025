@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Ruan/Desktop/Projeto Maromo
+# Install script for directory: C:/Users/Ruan/Desktop/Filme/Projeto-Maromo-2025
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Projeto_Maromo")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CatalogoFilmes")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Ruan/Desktop/Projeto Maromo/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Ruan/Desktop/Filme/Projeto-Maromo-2025/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

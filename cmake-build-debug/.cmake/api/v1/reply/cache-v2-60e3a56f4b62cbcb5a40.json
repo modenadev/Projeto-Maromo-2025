@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Ruan/Desktop/Projeto Maromo/cmake-build-debug"
+			"value" : "c:/Users/Ruan/Desktop/Filme/Projeto-Maromo-2025/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -431,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Ruan/Desktop/Projeto Maromo/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/Ruan/Desktop/Filme/Projeto-Maromo-2025/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Ruan/Desktop/Projeto Maromo"
+			"value" : "C:/Users/Ruan/Desktop/Filme/Projeto-Maromo-2025"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/Projeto_Maromo"
+			"value" : "C:/Program Files (x86)/CatalogoFilmes"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1135,7 +1135,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Ruan/Desktop/Projeto Maromo/cmake-build-debug"
+			"value" : "C:/Users/Ruan/Desktop/Filme/Projeto-Maromo-2025/cmake-build-debug"
 		},
 		{
 			"name" : "CatalogoFilmes_IS_TOP_LEVEL",
@@ -1159,43 +1159,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Ruan/Desktop/Projeto Maromo"
-		},
-		{
-			"name" : "Projeto_Maromo_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/Ruan/Desktop/Projeto Maromo/cmake-build-debug"
-		},
-		{
-			"name" : "Projeto_Maromo_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "Projeto_Maromo_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/Ruan/Desktop/Projeto Maromo"
+			"value" : "C:/Users/Ruan/Desktop/Filme/Projeto-Maromo-2025"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

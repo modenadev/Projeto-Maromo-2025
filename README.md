@@ -22,9 +22,13 @@ O CLion irá detectar automaticamente o CMakeLists.txt e configurar o ambiente.
 Compile o projeto clicando em Build Project ou usando o atalho Ctrl + F9.
 
 mkdir build
+
 cd build
+
 cmake ..
+
 cmake --build .
+
 O executável será gerado na pasta build.
 
 ▶️ Como Executar

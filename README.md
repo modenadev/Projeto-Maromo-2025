@@ -47,17 +47,22 @@ Clique duas vezes sobre o executável.
 Também é possível utilizar os executáveis prontos que estão na raiz do projeto, se fornecidos.
 
 📁 Estrutura do Projeto
-kotlin
-Copiar
-Editar
 ├── main.c              # Arquivo principal
+
 ├── filmes.c            # Implementação das funções
+
 ├── filmes.h            # Declarações e estruturas
+
 ├── filmes.csv          # Base de dados dos filmes
+
 ├── CMakeLists.txt      # Configuração do projeto para CLion/CMake
+
 ├── Projeto_Maromo.exe  # Executável gerado
+
 ├── .idea/              # Configurações do CLion (podem ser ignoradas)
+
 ✅ Funcionalidades
+
 Cadastro de filmes
 
 Listagem dos filmes cadastrados

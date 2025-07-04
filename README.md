@@ -1,25 +1,24 @@
-Projeto Maromo 2025
-Sistema simples em linguagem C para gerenciamento de um catálogo de filmes, incluindo cadastro, listagem e armazenamento em arquivo CSV.
+🎬 Projeto Maromo 2025
+Sistema simples desenvolvido em C para gerenciamento de um catálogo de filmes, incluindo funcionalidades de cadastro, listagem e armazenamento em arquivo CSV.
 
-Ambiente de Desenvolvimento
-Desenvolvido no CLion (IDE da JetBrains).
+🛠️ Ambiente de Desenvolvimento
+Desenvolvido na IDE CLion (JetBrains).
 
-Sistema operacional: Windows ou Linux.
+Compatível com Windows e Linux.
 
-Requer compilador C (recomenda-se GCC).
+Requer um compilador C (recomenda-se GCC).
 
-Observação: Embora o CLion utilize o CMake internamente para gerenciar builds, este projeto foi criado e testado no CLion, não diretamente via CMake puro.
+⚠️ Nota: Embora o CLion utilize o CMake internamente para compilar os projetos, este projeto foi desenvolvido e testado diretamente no CLion, e não via CMake puro.
 
-Como Instalar
-Baixe ou clone o repositório para uma pasta local.
+📦 Como Instalar
+Via CLion
+Clone ou baixe o repositório para uma pasta local.
 
 Abra o projeto no CLion.
 
-O CLion irá detectar automaticamente o arquivo CMakeLists.txt e configurar o ambiente de build.
+O CLion irá detectar automaticamente o CMakeLists.txt e configurar o ambiente.
 
-Compile o projeto clicando em Build Project ou utilizando o atalho Ctrl + F9.
-
-Alternativamente, se desejar compilar via terminal (fora do CLion), execute os comandos abaixo na pasta raiz do projeto:
+Compile o projeto clicando em Build Project ou usando o atalho Ctrl + F9.
 
 mkdir build
 cd build
@@ -27,49 +26,47 @@ cmake ..
 cmake --build .
 O executável será gerado na pasta build.
 
-Como Executar
-Pelo CLion
-Execute o projeto diretamente pelo botão Run na IDE.
+▶️ Como Executar
+No CLion
+Clique em Run ou use o atalho Shift + F10.
 
-Pelo terminal
-No Linux/macOS:
+No terminal
+Linux/macOS:
 
+bash
 Copiar
 Editar
 ./Projeto_Maromo
-No Windows:
+Windows:
 
-Execute o arquivo Projeto_Maromo.exe gerado na pasta build.
+Execute o arquivo Projeto_Maromo.exe dentro da pasta build, ou
 
-Ou simplesmente clique duas vezes no executável.
+Clique duas vezes sobre o executável.
 
-Também é possível utilizar os executáveis prontos fornecidos na pasta principal do projeto, se existirem.
+Também é possível utilizar os executáveis prontos que estão na raiz do projeto, se fornecidos.
 
-Estrutura do Projeto
-main.c — Arquivo principal do sistema.
+📁 Estrutura do Projeto
+kotlin
+Copiar
+Editar
+├── main.c              # Arquivo principal
+├── filmes.c            # Implementação das funções
+├── filmes.h            # Declarações e estruturas
+├── filmes.csv          # Base de dados dos filmes
+├── CMakeLists.txt      # Configuração do projeto para CLion/CMake
+├── Projeto_Maromo.exe  # Executável gerado
+├── .idea/              # Configurações do CLion (podem ser ignoradas)
+✅ Funcionalidades
+Cadastro de filmes
 
-filmes.c — Implementação das funções do sistema.
+Listagem dos filmes cadastrados
 
-filmes.h — Declaração das funções e estruturas.
+Salvamento em arquivo CSV
 
-filmes.csv — Arquivo de armazenamento dos filmes cadastrados.
-
-CMakeLists.txt — Configuração de build para CLion/CMake.
-
-.idea/ — Arquivos de configuração do CLion (podem ser ignorados).
-
-Projeto_Maromo.exe — Executável do sistema (Windows).
-
-Funcionalidades
-✅ Cadastro de filmes
-
-✅ Listagem dos filmes cadastrados
-
-✅ Salvamento dos dados em arquivo CSV
-
-Requisitos
+📌 Requisitos
 Compilador C (GCC ou equivalente)
 
-CLion instalado (opcional, mas recomendado)
+CLion instalado (recomendado)
 
-Windows ou Linux
+Sistema operacional Windows ou Linux
+

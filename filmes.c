@@ -188,22 +188,27 @@ void buscarPorDiretor() {
 }
 
 
-
-
 void filtrarPorGenero() {
     char genero[MAX_STR];
     printf("Gênero: ");
-    getchar();
-    fgets(genero, MAX_STR, stdin);
-    genero[strcspn(genero, "\n")] = '\0';
 
+    if (fgets(genero, MAX_STR, stdin)) {
+        genero[strcspn(genero, "\n")] = '\0';
+    }
+
+    int encontrou = 0;
     for (int i = 0; i < numFilmes; i++) {
         if (strcmp(filmes[i]->genero, genero) == 0) {
             printf("-> [%d] %s (%d) - Dir: %s, Nota: %.1f\n",
                    filmes[i]->id, filmes[i]->titulo,
                    filmes[i]->ano, filmes[i]->diretor,
                    filmes[i]->avaliacao);
+            encontrou = 1;
         }
+    }
+
+    if (!encontrou) {
+        printf("Nenhum filme encontrado para o gênero '%s'.\n", genero);
     }
 }
 
@@ -249,7 +254,7 @@ void listarFilmes() {
 
 void buscarPorNome() {
     char tituloBusca[MAX_STR];
-    printf("Título do filme para buscar: ");
+    printf("Titulo do filme para buscar: ");
 
     lerString("", tituloBusca, MAX_STR);
 
@@ -266,7 +271,7 @@ void buscarPorNome() {
     }
 
     if (!encontrado) {
-        printf("Nenhum filme encontrado com o título '%s'.\n", tituloBusca);
+        printf("Nenhum filme encontrado com o titulo '%s'.\n", tituloBusca);
     }
 }
 

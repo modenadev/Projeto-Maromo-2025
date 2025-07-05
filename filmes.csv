@@ -1,4 +1,5 @@
-ID,Titulo,Diretor,Ano,Genero,Avaliação
-1,Matrix,Ruan,1998,dcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\�,10.0
+ID,Titulo,Diretor,Ano,Genero,Avaliacao
+1,Matrix,Ruan,1998,ACAO,7.0
 21,Teste,Teste,2000,DRAMA,9.9
 20,Teste,Teste,2000,Teste,10.0
+22,Ruan,Ruan,2000,TESTE,10.0

@@ -30,7 +30,7 @@ void inicializa() {
 
         if (lidos == 6) {
             filmes[numFilmes++] = f;
-            printf("Filme carregado: [%d] %s (%d) - Dir: %s, Gênero: %s, Nota: %.1f\n",
+            printf("Filme carregado: ID: [%d] Nome: %s - Ano: (%d) - Dir: %s - Genero: %s - Nota: %.1f\n",
                     f->id, f->titulo, f->ano, f->diretor, f->genero, f->avaliacao);
         } else {
             printf("⚠️ Erro ao ler linha: %s", linha);
@@ -48,7 +48,7 @@ void salvarDados() {
         return;
     }
 
-    fprintf(arquivo, "ID,Titulo,Diretor,Ano,Genero,Avaliação\n");
+    fprintf(arquivo, "ID,Titulo,Diretor,Ano,Genero,Avaliacao\n");
     for (int i = 0; i < numFilmes; i++) {
         fprintf(arquivo, "%d,%s,%s,%d,%s,%.1f\n",
                 filmes[i]->id,
@@ -101,7 +101,7 @@ int lerInteiro(const char* prompt) {
             if(apenas_digitos) return valor;
         }
 
-        printf("⚠️ Erro: Entrada inválida. Por favor, digite apenas o número.\n");
+        printf("Erro: Entrada invalida. Por favor, digite apenas o numero.\n");
     }
 }
 
@@ -118,13 +118,13 @@ int idExiste(int id) {
 
 void adicionarFilme() {
     if (numFilmes >= MAX_FILMES) {
-        printf("Catálogo de filmes está cheio!\n");
+        printf("Catalogo de filmes esta cheio!\n");
         return;
     }
 
     Filme* f = (Filme*)malloc(sizeof(Filme));
     if (!f) {
-        printf("Erro de alocação de memória!\n");
+        printf("Erro de alocacao de memoria!\n");
         return;
     }
 
@@ -132,22 +132,22 @@ void adicionarFilme() {
     do {
         f->id = lerInteiro("ID do filme: ");
         if (idExiste(f->id)) {
-            printf("⚠️ Erro: Este ID já está em uso. Tente outro.\n");
+            printf("Erro: Este ID ja esta em uso. Tente outro.\n");
         }
     } while (idExiste(f->id));
 
 
 
-    lerString("Título: ", f->titulo, MAX_STR);
+    lerString("Titulo: ", f->titulo, MAX_STR);
     lerString("Diretor: ", f->diretor, MAX_STR);
     lerString("Genero: ", f->genero, MAX_STR);
 
 
 
     do {
-        f->ano = lerInteiro("Ano de lançamento: ");
+        f->ano = lerInteiro("Ano de lancamento: ");
         if (f->ano < 1888 || f->ano > 2025) {
-            printf("⚠️ Erro: Ano parece inválido. Tente novamente.\n");
+            printf("Erro: Ano parece invalido. Tente novamente.\n");
         }
     } while (f->ano < 1888 || f->ano > 2025);
 
@@ -155,11 +155,11 @@ void adicionarFilme() {
 
     float avaliacao;
     do {
-        printf("Avaliação (0.0 a 10.0): ");
+        printf("Avaliacao (0.0 a 10.0): ");
         scanf("%f", &avaliacao);
         limparBuffer();
         if (avaliacao < 0.0 || avaliacao > 10.0) {
-            printf("⚠️ Erro: A avaliação deve ser entre 0 e 10.\n");
+            printf("Erro: A avaliacao deve ser entre 0 e 10.\n");
         }
     } while (avaliacao < 0.0 || avaliacao > 10.0);
     f->avaliacao = avaliacao;
@@ -168,7 +168,7 @@ void adicionarFilme() {
     // --- Adicionar e Salvar ---
     filmes[numFilmes++] = f;
     salvarDados();
-    printf("\n✅ Filme '%s' adicionado com sucesso!\n", f->titulo);
+    printf("\nFilme '%s' adicionado com sucesso!\n", f->titulo);
 }
 
 void buscarPorDiretor() {
@@ -183,7 +183,7 @@ void buscarPorDiretor() {
     for (int i = 0; i < numFilmes; i++) {
 
         if (strcasecmp(filmes[i]->diretor, nome) == 0) {
-            printf("-> [%d] %s (%d) - Gênero: %s, Nota: %.1f\n",
+            printf("-> [%d] %s (%d) - Genero: %s, Nota: %.1f\n",
                    filmes[i]->id, filmes[i]->titulo,
                    filmes[i]->ano, filmes[i]->genero,
                    filmes[i]->avaliacao);
@@ -199,7 +199,7 @@ void buscarPorDiretor() {
 
 void filtrarPorGenero() {
     char genero[MAX_STR];
-    printf("Gênero: ");
+    printf("Genero: ");
 
     if (fgets(genero, MAX_STR, stdin)) {
         genero[strcspn(genero, "\n")] = '\0';
@@ -217,7 +217,7 @@ void filtrarPorGenero() {
     }
 
     if (!encontrou) {
-        printf("Nenhum filme encontrado para o gênero '%s'.\n", genero);
+        printf("Nenhum filme encontrado para o genero '%s'.\n", genero);
     }
 }
 
@@ -230,15 +230,15 @@ void atualizarAvaliacao() {
     for (int i = 0; i < numFilmes; i++) {
         if (filmes[i]->id == id) {
             printf("Nota atual: %.1f\n", filmes[i]->avaliacao);
-            printf("Nova avaliação (0-10): ");
+            printf("Nova avaliacao (0-10): ");
             scanf("%f", &filmes[i]->avaliacao);
             salvarDados();
-            printf("Avaliação atualizada com sucesso.\n");
+            printf("Avaliacao atualizada com sucesso.\n");
             return;
         }
     }
 
-    printf("Filme com ID %d não encontrado.\n", id);
+    printf("Filme com ID %d nao encontrado.\n", id);
 }
 
 int comparar(const void* a, const void* b) {

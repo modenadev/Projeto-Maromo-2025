@@ -26,7 +26,7 @@ void menu() {
             case 5: listarFilmes(); break;
             case 6: buscarPorNome(); break;
             case 0: printf("Saindo...\n"); break;
-            default: printf("Opção inválida.\n");
+            default: printf("Opcao invalida.\n");
         }
 
     } while (opcao != 0);
